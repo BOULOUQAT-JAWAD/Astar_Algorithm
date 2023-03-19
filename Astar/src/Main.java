@@ -6,12 +6,12 @@ public class Main {
 
         Graph graph = GenererGraphe();
 
-        Noeud solution = A_Star(graph.getVertex(0),graph.getVertex(6),graph);
+        List<Noeud> solution = A_Star(graph.getVertex(0),graph.getVertex(6),graph);
 
         System.out.println(solution);
     }
 
-    public static Noeud A_Star(Noeud initial, Noeud but, Graph graphe){
+    public static List<Noeud> A_Star(Noeud initial, Noeud but, Graph graphe){
 
         // get hashMap
 //        Map<Noeud, Map<Integer, Noeud>> graph = graphe.getMap();
@@ -31,7 +31,7 @@ public class Main {
 
             noeud = frontiere.poll();
 
-            if (noeud.equals(but)) return noeud;
+            if (noeud.equals(but)) return visites;
 
             visites.add(noeud);
 
